@@ -1,10 +1,19 @@
 @import 'reset'
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic-ext')
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic-ext')
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&subset=cyrillic')
 body
-	font-family: open-sans, tahoma, verdana
+	font-family: roboto, tahoma, verdana
 	position: relative
+	color: #333
+	// background-image: url(../img/pattern.jpg)
+	// background-repeat: repeat
 
+	
+
+
+$orange: #FF4E00
 $margin_top: 50px
+$margin_top_mobile: 20px
 // ##     ## ########    ###    ########  ######## ########
 // ##     ## ##         ## ##   ##     ## ##       ##     ##
 // ##     ## ##        ##   ##  ##     ## ##       ##     ##
@@ -35,20 +44,28 @@ $margin_top: 50px
 	margin-top: $margin_top
 	text-align: center
 	position: relative
+	p
+		background-color: white
+	@media only screen and (max-width: 500px)
+		margin-top: $margin_top_mobile
 
 
 .advantages_title
 	text-align: center
 	font-size: 30px
 	margin-top: $margin_top
+	@media only screen and (max-width: 500px)
+		margin-top: $margin_top_mobile	
 	// text-transform: uppercase
 
 .advantages_element
 	display: inline-block
-	width: 200px
-
+	width: 170px
+	margin: 0px 20px
 	text-align: center
 	vertical-align: top
+	@media only screen and (max-width: 1000px)
+		margin: 0px
 	img
 		display: block
 
@@ -61,39 +78,110 @@ $margin_top: 50px
 //  ######  ##     ## ##     ## ##     ## #######    ##    ##     ## ########  ######## ########
 
 .char_table_container
+	position: relative
 	text-align: center
 	margin-top: $margin_top
+	@media only screen and (max-width: 500px)
+		margin-top: $margin_top_mobile	
 	table
 		background-color: #FFF
 		display: inline-block
 		text-align: left
-		border: 1px solid #D63700
+		border: 1px solid $orange
 		padding: 5px
-		td
+		border-radius: 4px
+		tr
 			border-bottom: 1px solid gray
+			&:last-child 
+				border: 0px		
 		td:nth-child(odd)
 			width: 350px
 			padding-left: 10px
 		td:nth-child(even)
 			width: 120px
 			text-align: center
-			padding-right: 5px		
-			small
-				font-size: 10px
-				position: relative
-				top: -7px
+			padding-right: 5px	
 
-.advantages_background
-	// background-image: url("../img/advantages/greenhouse.png")
-	// background-repeat: no-repeat
-	// background-size: 100%
-	// background-position: center center
+		small
+			font-size: 10px
+			position: relative
+			top: -7px
+
+
+
+.ogurcik
 	width: 100vw
 	height: 100vh
-	position: absolute
+	// background-image: url(../img/table/vegetables.png)
+	// background-repeat: no-repeat
+	// background-position: center center
+	// background-size: contain
+	background-image: url(../img/table/ogurcik.jpg)
+	background-repeat: no-repeat
+	background-position: right center
+	
 	z-index: -100
-	top: 230px
-	overflow: show
+	position: absolute
+	top: -50px	
+	left: 0px
+	-webkit-filter: grayscale(100%)
+	filter: grayscale(100%)
+	transition: filter .5s ease
+
+.vegetables
+	width: 90vw
+	height: 100vh
+	// background-image: url(../img/table/vegetables.png)
+	// background-repeat: no-repeat
+	// background-position: center center
+	// background-size: contain
+	background-image: url(../img/table/tomato.jpg)
+	background-repeat: no-repeat
+	background-position: left center
+	
+	z-index: -100
+	position: absolute
+	top: -450px	
+	left: 0px
+	-webkit-filter: grayscale(100%)
+	filter: grayscale(100%)
+	transition: filter .5s ease
+
+
+.vegetables_show_container:hover .vegetables
+	-webkit-filter: grayscale(0%)
+	filter: grayscale(0%)
+.vegetables_show_container:hover .ogurcik
+	-webkit-filter: grayscale(0%)
+	filter: grayscale(0%)
+
+// .parallax_1
+// 	width: 90vw
+// 	height: 100vh
+// 	background-image: url(../img/table/parallax1.png)
+// 	background-repeat: no-repeat
+// 	background-position: center center
+// 	background-size: contain
+// 	z-index: -100
+// 	position: absolute
+// 	top: -100px
+
+// .parallax_2
+// 	width: 90vw
+// 	height: 100vh
+// 	background-image: url(../img/table/parallax1.png)
+// 	background-repeat: no-repeat
+// 	background-position: center center
+// 	background-size: contain
+// 	z-index: -100
+// 	position: absolute
+// 	top: -100px
+// 	background-image: url(../img/table/parallax2.png)
+			
+
+
+
+
 
 
 // ##     ## #### ########  ########  #######
@@ -107,7 +195,193 @@ $margin_top: 50px
 .video_container
 	text-align: center
 	margin-top: $margin_top
+	@media only screen and (max-width: 500px)
+		margin-top: $margin_top_mobile	
 .video_wrapper	
-	display: inline-block
+	display: block
+	margin: 0 auto
 	width: 640px
 	height: 360px
+	@media only screen and (max-width: 640px)
+		width: 100%
+	@media only screen and (max-width: 400px)
+		height: 210px
+	@media only screen and (max-width: 320px)
+		height: 170px
+
+
+
+// ######## ########    ###    ######## ##     ## ########  ########  ######
+// ##       ##         ## ##      ##    ##     ## ##     ## ##       ##    ##
+// ##       ##        ##   ##     ##    ##     ## ##     ## ##       ##
+// ######   ######   ##     ##    ##    ##     ## ########  ######    ######
+// ##       ##       #########    ##    ##     ## ##   ##   ##             ##
+// ##       ##       ##     ##    ##    ##     ## ##    ##  ##       ##    ##
+// ##       ######## ##     ##    ##     #######  ##     ## ########  ######	
+
+.features_container
+	text-align: center
+	vertical-align: top
+	margin-top: $margin_top
+	position: relative
+	left: -70px
+	@media only screen and (max-width: 500px)
+		margin-top: $margin_top_mobile	
+	@media only screen and (max-width: 1000px)
+		left: 0px
+
+
+.features_img_container
+	text-align: center
+	display: inline-block
+	width: 600px
+	vertical-align: top
+	@media only screen and (max-width: 650px)
+		width: 100%
+
+.features_img_title
+	font-size: 30px
+	text-align: right
+	margin-bottom: 50px
+	position: relative
+	left: -40px
+	@media only screen and (max-width: 1000px)
+		text-align: center
+
+.features_elements_container
+	display: inline-block
+	width: auto
+	text-align: left
+
+
+
+.features_element
+	display: block
+	vertical-align: top
+	height: 200px
+	position: relative
+	margin-bottom: 20px
+	left: 80px
+	@media only screen and (max-width: 1000px)
+		left: 0px
+		margin: 0px
+	@media only screen and (max-width: 320px)
+		height: auto
+		text-align: center
+
+	img
+		display: inline-block
+	span
+		display: inline-block	
+		width: 100px
+		vertical-align: top
+		position: relative
+		top: 70px
+		left: 20px
+		@media only screen and (max-width: 320px)
+			display: block
+			top: 0px
+			left: 0px
+			width: 100%
+
+
+//  ######  ######## ########
+// ##    ## ##          ##
+// ##       ##          ##
+//  ######  ######      ##
+//       ## ##          ##
+// ##    ## ##          ##
+//  ######  ########    ##
+.set_container
+	text-align: center
+.set_title
+	margin-top: $margin_top
+	text-align: center
+	font-size: 30px
+	margin-bottom: 20px
+	@media only screen and (max-width: 1000px)
+		margin-top: $margin_top_mobile	
+
+.set_1
+	display: inline-block
+	padding: 10px
+	img
+		border-radius: 4px
+
+.set_2
+	display: inline-block
+	padding: 10px
+	img
+		border-radius: 4px
+
+// ########  #######   #######  ######## ######## ########
+// ##       ##     ## ##     ##    ##    ##       ##     ##
+// ##       ##     ## ##     ##    ##    ##       ##     ##
+// ######   ##     ## ##     ##    ##    ######   ########
+// ##       ##     ## ##     ##    ##    ##       ##   ##
+// ##       ##     ## ##     ##    ##    ##       ##    ##
+// ##        #######   #######     ##    ######## ##     ##
+
+.footer_container
+	color: #000
+	border-radius: 10px
+	margin: $margin_top auto 20px
+	text-align: center
+	width: 550px
+	background-color: $orange
+	padding: 30px
+	box-shadow: 0px 10px 10px rgba($orange, .3), 0px -10px 40px rgba($orange, .3)
+	@media only screen and (max-width: 500px)
+		margin-top: $margin_top_mobile	
+	@media only screen and (max-width: 1065px)
+		width: 100%
+		padding: 0px 0px 30px 0px
+
+	p
+		font-size: 25px	
+
+.callback
+	padding-top: 20px
+
+.form_container	
+	padding: 20px
+	width: 250px
+	margin: 30px auto
+	background-color: #fafafa
+	border-radius: 4px
+	@media only screen and (max-width: 300px)
+
+
+.form_title
+	font-size: 20px
+	margin-top: -10px
+	margin-bottom: 10px	
+
+input
+	margin: 10px 0px
+	padding: 5px 0px 5px 10px
+
+button
+
+	margin-top: 10px
+	font-size: 20px
+
+
+
+//  ######   ########     ###     ######   ######
+// ##    ##  ##     ##   ## ##   ##    ## ##    ##
+// ##        ##     ##  ##   ##  ##       ##
+// ##   #### ########  ##     ##  ######   ######
+// ##    ##  ##   ##   #########       ##       ##
+// ##    ##  ##    ##  ##     ## ##    ## ##    ##
+//  ######   ##     ## ##     ##  ######   ######	
+
+.grass
+	height: 195px
+	width: 100%
+	background-image: url(../img/grass/grass.jpg)
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center bottom
+
+	
