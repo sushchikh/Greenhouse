@@ -1,19 +1,76 @@
 @import 'reset'
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic-ext')
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&subset=cyrillic')
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900')
+
+
+$bgc: #CD7F41
+$text_color_brown: #7D4011
+$text_color_white: #fafafa
+$bgc_light_brown: #FBE6D5
+$btnc: #DC3C18
+
 body
-	font-family: roboto, tahoma, verdana
+	font-family: roboto
+
+// ##     ## ########      ##     ## ########    ###    ########  ######## ########
+// ##     ## ##     ##     ##     ## ##         ## ##   ##     ## ##       ##     ##
+// ##     ## ##     ##     ##     ## ##        ##   ##  ##     ## ##       ##     ##
+// ##     ## ########      ######### ######   ##     ## ##     ## ######   ########
+// ##     ## ##            ##     ## ##       ######### ##     ## ##       ##   ##
+// ##     ## ##        ### ##     ## ##       ##     ## ##     ## ##       ##    ##
+//  #######  ##        ### ##     ## ######## ##     ## ########  ######## ##     ##
+
+.up_header_container
+	padding: 10px 0px 9px
+	width: 100%
+	text-align: center
+	background-color: $bgc
 	position: relative
-	color: #333
-	// background-image: url(../img/pattern.jpg)
-	// background-repeat: repeat
+	box-shadow: 0px 2px 10px gray
+	z-index: 100
 
-	
+.up_header_logo,
+.up_header_phone,
+.up_header_btn
+	display: inline-block
+	position: relative
+	vertical-align: middle
+
+.up_header_logo
+	background-image: url(../img/header/logo_celina2.png)
+	background-repeat: no-repeat
+	background-size: contain
+	background-position: center center
+	height: 38px
+	width: 70px
+	margin-right: 100px
+	@media only screen and (max-width: 500px)
+		margin-right: 0px
+
+.up_header_phone
+	color: $text_color_white
+	font-weight: 500
+	text-align: center
+	margin-right: 10px
+	@media only screen and (max-width: 400px)
+		display: block
+		margin: 0
+
+.up_header_btn
+	color: $text_color_brown
+	background-color: $bgc_light_brown
+	padding: 7px 15px
+	border-radius: 10px
 
 
-$orange: #FF4E00
-$margin_top: 50px
-$margin_top_mobile: 20px
+.push	
+	cursor: pointer
+	position: relative
+	&:active
+		box-shadow: inset 0px 2px 6px rgba($text_color_brown, .5)
+		top: 2px
+
+
 // ##     ## ########    ###    ########  ######## ########
 // ##     ## ##         ## ##   ##     ## ##       ##     ##
 // ##     ## ##        ##   ##  ##     ## ##       ##     ##
@@ -23,166 +80,260 @@ $margin_top_mobile: 20px
 // ##     ## ######## ##     ## ########  ######## ##     ##
 
 .header_container
+	height: 780px
 	width: 100%
-	height: 852px
-	background-image: url("../img/header/header_background.png")
+	background-image: url(../img/header/header_background_2.jpg)
+	background-position: center center
+	background-size: cover
+	background-repeat: no-repeat
+	padding-top: 30px
+	text-align: center
+	position: relative
+
+
+	//display: none
+	
+
+.header_container_title
+	text-align: center
+	color: $text_color_brown
+	font-size: 30px
+	p
+		font-weight: 300
+
+.header_img
+	display: inline-block
+	background-image: url(../img/header/header_img.png)
+	background-position: center center
+	background-size: cover
+	background-repeat: no-repeat
+	height: 600px
+	width: 700px
+	position: absolute
+	left: 300px
+	@media only screen and (max-width: 1000px)
+		width: 100%
+
+.header_price_tag
+	font-size: 30px
+	background-color: #FEE517
+	color: $text_color_brown
+	display: inline-block
+	padding: 5px 10px
+	border-radius: 10px
+	.rouble
+		position: relative
+		left: -2px
+
+.header_price_tag_position		
+	position: absolute
+	left: 800px 
+	top: 200px
+	@media only screen and (max-width: 1000px)
+		left: 0
+
+.header_order_form_container
+	position: absolute
+	width: 300px
+	height: 400px
+	background-color: $text_color_white
+	padding-top: 20px
+	top: 100px
+	left: 100px
+	box-shadow: 0px 0px 15px gray
+
+.header_order_form_title
+	color: $text_color_brown
+	font-size: 30px
+	line-height: 25px
+	p
+		font-weight: 300
+		small
+			font-weight: 300
+			position: relative
+
+		strong
+			font-weight: 400
+
+
+// ######## ########    ###    ######## ##     ## ########  ########  ######
+// ##       ##         ## ##      ##    ##     ## ##     ## ##       ##    ##
+// ##       ##        ##   ##     ##    ##     ## ##     ## ##       ##
+// ######   ######   ##     ##    ##    ##     ## ########  ######    ######
+// ##       ##       #########    ##    ##     ## ##   ##   ##             ##
+// ##       ##       ##     ##    ##    ##     ## ##    ##  ##       ##    ##
+// ##       ######## ##     ##    ##     #######  ##     ## ########  ######
+
+.features_container
+	height: 600px
+	background-image: url(../img/features/background.jpg)
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: center top
-
-
-
-//    ###    ########  ##     ##    ###    ##    ## ########    ###     ######   ########  ######
-//   ## ##   ##     ## ##     ##   ## ##   ###   ##    ##      ## ##   ##    ##  ##       ##    ##
-//  ##   ##  ##     ## ##     ##  ##   ##  ####  ##    ##     ##   ##  ##        ##       ##
-// ##     ## ##     ## ##     ## ##     ## ## ## ##    ##    ##     ## ##   #### ######    ######
-// ######### ##     ##  ##   ##  ######### ##  ####    ##    ######### ##    ##  ##             ##
-// ##     ## ##     ##   ## ##   ##     ## ##   ###    ##    ##     ## ##    ##  ##       ##    ##
-// ##     ## ########     ###    ##     ## ##    ##    ##    ##     ##  ######   ########  ######
-
-.advantages_container
-	margin-top: $margin_top
 	text-align: center
+	padding-top: 30px
+	overflow: hidden
 	position: relative
-	p
-		background-color: white
-	@media only screen and (max-width: 500px)
-		margin-top: $margin_top_mobile
+	@media only screen and (max-width: 1530px)
+		height: auto
+		padding-top: 10px
+		padding-bottom: 20px
 
+.features_trigger
+	width: 0px
+	height: 500px
+	position: absolute
+	top: 0 
+	left: 0
+	@media only screen and (max-width: 1000px)
+		top: -200px
 
-.advantages_title
-	text-align: center
+.features_container_title
 	font-size: 30px
-	margin-top: $margin_top
-	@media only screen and (max-width: 500px)
-		margin-top: $margin_top_mobile	
-	// text-transform: uppercase
-
-.advantages_element
+	color: $text_color_brown
+	border-bottom: 2px solid $text_color_brown
 	display: inline-block
-	width: 170px
-	margin: 0px 20px
+	padding: 10px
+	@media only screen and (max-width: 800px)
+
+
+.features_subtitle_text
+	display: inline-block
+	width: 700px
+	margin-top: 30px
+	margin-bottom: 60px
+	padding: 0px 10px
+	color: $text_color_brown
+	@media only screen and (max-width: 800px)
+		width: 100%
+		margin-bottom: 30px
+	@media only screen and (max-width: 500px)
+		margin-bottom: 10px
+
+
+.features_element
+	display: inline-block
+	width: 300px
 	text-align: center
 	vertical-align: top
-	@media only screen and (max-width: 1000px)
-		margin: 0px
-	img
-		display: block
+	opacity: 0
+	transform: translate(0px, 150px)
+	transition: all .5s cubic-bezier(0.350, 0.375, 0.135, 1.345)
+	@media only screen and (max-width: 900px)
+		margin-top: 20px
+	@media only screen and (max-width: 800px)	
+		transform: translate(150px, 0px)
+	@media only screen and (max-width: 310px)
+		width: 100%
 
-//  ######  ##     ##    ###    ########          ########    ###    ########  ##       ########
-// ##    ## ##     ##   ## ##   ##     ##            ##      ## ##   ##     ## ##       ##
-// ##       ##     ##  ##   ##  ##     ##            ##     ##   ##  ##     ## ##       ##
-// ##       ######### ##     ## ########             ##    ##     ## ########  ##       ######
-// ##       ##     ## ######### ##   ##              ##    ######### ##     ## ##       ##
-// ##    ## ##     ## ##     ## ##    ##             ##    ##     ## ##     ## ##       ##
-//  ######  ##     ## ##     ## ##     ## #######    ##    ##     ## ########  ######## ########
-
-.char_table_container
-	position: relative
+.features_element_img
+	display: inline-block
+	border-radius: 50%
+	width: 150px
+	height: 150px
+	background-color: $text_color_brown
 	text-align: center
-	margin-top: $margin_top
-	@media only screen and (max-width: 500px)
-		margin-top: $margin_top_mobile	
-	table
-		background-color: #FFF
+
+	img
 		display: inline-block
-		text-align: left
-		border: 1px solid $orange
-		padding: 5px
-		border-radius: 4px
-		tr
-			border-bottom: 1px solid gray
-			&:last-child 
-				border: 0px		
-		td:nth-child(odd)
-			width: 350px
-			padding-left: 10px
-		td:nth-child(even)
-			width: 120px
-			text-align: center
-			padding-right: 5px	
-
-		small
-			font-size: 10px
-			position: relative
-			top: -7px
+		vertical-align: middle
+		transition: transform .5s ease
+		margin-top: 10px
 
 
+.rotate
+	&:hover img
+		transform: rotateY(180deg)
 
-.ogurcik
-	width: 100vw
-	height: 100vh
-	// background-image: url(../img/table/vegetables.png)
-	// background-repeat: no-repeat
-	// background-position: center center
-	// background-size: contain
-	background-image: url(../img/table/ogurcik.jpg)
-	background-repeat: no-repeat
-	background-position: right center
+.features_element_title
+	font-weight: 500
+	color: $text_color_brown
+	margin: 15px 0px 10px
+	@media only screen and (max-width: 800px)
+		margin: 5px 0px 5px
 	
-	z-index: -100
-	position: absolute
-	top: -50px	
-	left: 0px
-	-webkit-filter: grayscale(100%)
-	filter: grayscale(100%)
-	transition: filter .5s ease
+.features_element_text
+	color: $text_color_brown
 
-.vegetables
-	width: 90vw
-	height: 100vh
-	// background-image: url(../img/table/vegetables.png)
-	// background-repeat: no-repeat
-	// background-position: center center
-	// background-size: contain
-	background-image: url(../img/table/tomato.jpg)
-	background-repeat: no-repeat
-	background-position: left center
+
+//  ######     ###    ##       ##       ########
+// ##    ##   ## ##   ##       ##       ##     ##
+// ##        ##   ##  ##       ##       ##     ##
+// ##       ##     ## ##       ##       ########
+// ##       ######### ##       ##       ##     ##
+// ##    ## ##     ## ##       ##       ##     ##
+//  ######  ##     ## ######## ######## ########
+
+.callback_container
+	background-color: $text_color_brown
+	height: 70px
+	width: 100%
+	line-height: 70px
+	text-align: center
+	@media only screen and (max-width: 1000px)
+		height: auto
+		line-height: 30px
+		padding: 2px 0px
+	@media only screen and (max-width: 500px)
+		padding: 2px 0px 10px
+
+.callback_text,
+.callback_btn
+	display: inline-block
+	font-size: 20px
+	font-weight: 300
+	color: $text_color_white
+
+.callback_btn
+	background-color: $btnc
+	padding: 10px 20px
+	border-radius: 10px
+	line-height: 20px
+	margin-left: 30px
+	font-size: 18px
+	@media only screen and (max-width: 1000px)
+		margin-left: 0px
 	
-	z-index: -100
+
+// ########     ###    ######## ########   #######  ########
+// ##     ##   ## ##        ##  ##     ## ##     ## ##     ##
+// ##     ##  ##   ##      ##   ##     ## ##     ## ##     ##
+// ########  ##     ##    ##    ########  ##     ## ########
+// ##   ##   #########   ##     ##     ## ##     ## ##   ##
+// ##    ##  ##     ##  ##      ##     ## ##     ## ##    ##
+// ##     ## ##     ## ######## ########   #######  ##     ##
+
+.razbor_container
+	text-align: center
+	padding-top: 30px
+	position: relative
+	@media only screen and (max-width: 650px)
+		display: none
+	.features_container_title
+		margin-bottom: 30px
+
+.razbor_trigger
+	width: 0px
+	height: 500px
 	position: absolute
-	top: -450px	
-	left: 0px
-	-webkit-filter: grayscale(100%)
-	filter: grayscale(100%)
-	transition: filter .5s ease
+	top: 0 
+	left: 0
+	@media only screen and (max-width: 1000px)
+		top: -200px
+
+.razbor_container
+	.header_price_tag
+		margin-bottom: 30px
+
+.razbor_container
+	.callback_btn		
+		margin: 30px 0px 30px
 
 
-.vegetables_show_container:hover .vegetables
-	-webkit-filter: grayscale(0%)
-	filter: grayscale(0%)
-.vegetables_show_container:hover .ogurcik
-	-webkit-filter: grayscale(0%)
-	filter: grayscale(0%)
-
-// .parallax_1
-// 	width: 90vw
-// 	height: 100vh
-// 	background-image: url(../img/table/parallax1.png)
-// 	background-repeat: no-repeat
-// 	background-position: center center
-// 	background-size: contain
-// 	z-index: -100
-// 	position: absolute
-// 	top: -100px
-
-// .parallax_2
-// 	width: 90vw
-// 	height: 100vh
-// 	background-image: url(../img/table/parallax1.png)
-// 	background-repeat: no-repeat
-// 	background-position: center center
-// 	background-size: contain
-// 	z-index: -100
-// 	position: absolute
-// 	top: -100px
-// 	background-image: url(../img/table/parallax2.png)
-			
-
-
-
-
-
+.razbor_img
+	opacity: 0
+	transition: all .8s cubic-bezier(0.350, 0.375, 0.135, 1.145)
+	transform: scale(0)
 
 // ##     ## #### ########  ########  #######
 // ##     ##  ##  ##     ## ##       ##     ##
@@ -194,195 +345,42 @@ $margin_top_mobile: 20px
 
 .video_container
 	text-align: center
-	margin-top: $margin_top
-	@media only screen and (max-width: 500px)
-		margin-top: $margin_top_mobile	
-.video_wrapper	
-	display: block
-	margin: 0 auto
-	width: 640px
-	height: 360px
-	@media only screen and (max-width: 640px)
-		width: 100%
-	@media only screen and (max-width: 400px)
-		height: 210px
-	@media only screen and (max-width: 320px)
-		height: 170px
+	margin: 0px auto
+	width: 900px
+	height: 450px
 
 
-
-// ######## ########    ###    ######## ##     ## ########  ########  ######
-// ##       ##         ## ##      ##    ##     ## ##     ## ##       ##    ##
-// ##       ##        ##   ##     ##    ##     ## ##     ## ##       ##
-// ######   ######   ##     ##    ##    ##     ## ########  ######    ######
-// ##       ##       #########    ##    ##     ## ##   ##   ##             ##
-// ##       ##       ##     ##    ##    ##     ## ##    ##  ##       ##    ##
-// ##       ######## ##     ##    ##     #######  ##     ## ########  ######	
-
-.features_container
-	text-align: center
-	vertical-align: top
-	margin-top: $margin_top
+iframe
 	position: relative
-	left: -70px
-	@media only screen and (max-width: 500px)
-		margin-top: $margin_top_mobile	
-	@media only screen and (max-width: 1000px)
-		left: 0px
-
-
-.features_img_container
-	text-align: center
 	display: inline-block
-	width: 600px
-	vertical-align: top
-	@media only screen and (max-width: 650px)
-		width: 100%
+	width: 740px
+	height: 480px
 
-.features_img_title
-	font-size: 30px
-	text-align: right
-	margin-bottom: 50px
-	position: relative
-	left: -40px
-	@media only screen and (max-width: 1000px)
-		text-align: center
+// ########  ##        #######   ######  ##    ##  ######
+// ##     ## ##       ##     ## ##    ## ##   ##  ##    ##
+// ##     ## ##       ##     ## ##       ##  ##   ##
+// ########  ##       ##     ## ##       #####     ######
+// ##     ## ##       ##     ## ##       ##  ##         ##
+// ##     ## ##       ##     ## ##    ## ##   ##  ##    ##
+// ########  ########  #######   ######  ##    ##  ######
 
-.features_elements_container
-	display: inline-block
-	width: auto
-	text-align: left
+.blocks_container
 
-
-
-.features_element
-	display: block
-	vertical-align: top
-	height: 200px
-	position: relative
-	margin-bottom: 20px
-	left: 80px
-	@media only screen and (max-width: 1000px)
-		left: 0px
-		margin: 0px
-	@media only screen and (max-width: 320px)
-		height: auto
-		text-align: center
-
-	img
-		display: inline-block
-	span
-		display: inline-block	
-		width: 100px
-		vertical-align: top
-		position: relative
-		top: 70px
-		left: 20px
-		@media only screen and (max-width: 320px)
-			display: block
-			top: 0px
-			left: 0px
-			width: 100%
-
-
-//  ######  ######## ########
-// ##    ## ##          ##
-// ##       ##          ##
-//  ######  ######      ##
-//       ## ##          ##
-// ##    ## ##          ##
-//  ######  ########    ##
-.set_container
-	text-align: center
-.set_title
-	margin-top: $margin_top
-	text-align: center
-	font-size: 30px
-	margin-bottom: 20px
-	@media only screen and (max-width: 1000px)
-		margin-top: $margin_top_mobile	
-
-.set_1
-	display: inline-block
-	padding: 10px
-	img
-		border-radius: 4px
-
-.set_2
-	display: inline-block
-	padding: 10px
-	img
-		border-radius: 4px
-
-// ########  #######   #######  ######## ######## ########
-// ##       ##     ## ##     ##    ##    ##       ##     ##
-// ##       ##     ## ##     ##    ##    ##       ##     ##
-// ######   ##     ## ##     ##    ##    ######   ########
-// ##       ##     ## ##     ##    ##    ##       ##   ##
-// ##       ##     ## ##     ##    ##    ##       ##    ##
-// ##        #######   #######     ##    ######## ##     ##
-
-.footer_container
-	color: #000
-	border-radius: 10px
-	margin: $margin_top auto 20px
-	text-align: center
-	width: 550px
-	background-color: $orange
-	padding: 30px
-	box-shadow: 0px 10px 10px rgba($orange, .3), 0px -10px 40px rgba($orange, .3)
-	@media only screen and (max-width: 500px)
-		margin-top: $margin_top_mobile	
-	@media only screen and (max-width: 1065px)
-		width: 100%
-		padding: 0px 0px 30px 0px
-
-	p
-		font-size: 25px	
-
-.callback
-	padding-top: 20px
-
-.form_container	
-	padding: 20px
-	width: 250px
-	margin: 30px auto
-	background-color: #fafafa
-	border-radius: 4px
-	@media only screen and (max-width: 300px)
-
-
-.form_title
-	font-size: 20px
-	margin-top: -10px
-	margin-bottom: 10px	
-
-input
-	margin: 10px 0px
-	padding: 5px 0px 5px 10px
-
-button
-
-	margin-top: 10px
-	font-size: 20px
+.block_element
 
 
 
 
-//  ######   ########     ###     ######   ######
-// ##    ##  ##     ##   ## ##   ##    ## ##    ##
-// ##        ##     ##  ##   ##  ##       ##
-// ##   #### ########  ##     ##  ######   ######
-// ##    ##  ##   ##   #########       ##       ##
-// ##    ##  ##    ##  ##     ## ##    ## ##    ##
-//  ######   ##     ## ##     ##  ######   ######	
 
-.grass
-	height: 195px
-	width: 100%
-	background-image: url(../img/grass/grass.jpg)
-	background-repeat: no-repeat
-	background-size: cover
-	background-position: center bottom
+//    ###    ##    ## #### ##     ## ########
+//   ## ##   ###   ##  ##  ###   ### ##
+//  ##   ##  ####  ##  ##  #### #### ##
+// ##     ## ## ## ##  ##  ## ### ## ######
+// ######### ##  ####  ##  ##     ## ##
+// ##     ## ##   ###  ##  ##     ## ##
+// ##     ## ##    ## #### ##     ## ########
 
-	
+.show
+	transform: translate(0px, 0px)
+	transform: scale(1)
+	opacity: 1
