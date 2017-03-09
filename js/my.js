@@ -24,7 +24,35 @@ $(window).scroll(function() {
 	};
 
 
-});
+// blocks img
+	if (wScroll > ($('.blocks_trigger').offset().top - ($(window).height()/2))){
+		$('.block_element').each(function(index) {
+			setTimeout(function(){
+				$('.block_element').eq(index).addClass('show');
+			}, 100 * (index + 1))
+		});
+	};	
+
+// complect img show
+	if (wScroll > ($('.complect_trigger').offset().top - ($(window).height()/2))){
+		$('.compl_element').each(function(index) {
+			setTimeout(function(){
+				$('.compl_element').eq(index).addClass('show');
+			}, 100 * (index + 1))
+		});
+	};	
+
+
+
+});//$(window).scroll-function END
+
+
+
+
+// летающая помидорка
+
+$('.tomato_container').addClass('fly');
+
 
 
 }); //$(document).ready-func END
