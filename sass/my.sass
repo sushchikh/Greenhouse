@@ -460,6 +460,71 @@ iframe
 		top: -300px
 
 
+//  ######  ##     ##    ###    ########
+// ##    ## ##     ##   ## ##   ##     ##
+// ##       ##     ##  ##   ##  ##     ##
+// ##       ######### ##     ## ########
+// ##       ##     ## ######### ##   ##
+// ##    ## ##     ## ##     ## ##    ##
+//  ######  ##     ## ##     ## ##     ##
+
+.char_container
+	text-align: center
+	background-image: url("../img/char/background.jpg")
+	background-repeat: no-repeat
+	background-position: center top
+	background-size: cover
+	padding-top: 30px
+	position: relative
+
+.char_trigger
+	width: 0px
+	height: 500px 
+	position: absolute
+	top: 0 
+	left: 0
+	@media only screen and (max-width: 1000px)
+		top: -300px
+
+
+.char_element
+	background-color: $text_color_brown
+	border-radius: 10px
+	text-align: center
+	display: inline-block
+	width: 200px
+	height: 300px
+	color: white
+	margin: 20px 10px 
+	box-shadow: 0px 0px 35px rgba($text_color_brown, .6)
+	opacity: 0
+	transform: translate(0px, 200px) scale(.3)
+	transition: all .8s cubic-bezier(0.350, 0.375, 0.135, 1.145)
+	&:hover
+		transform: scale(1.05)
+	@media only screen and (max-width: 450px)
+		transform: translate(200px, 0px) scale(.5)
+
+
+
+.char_element_title_small
+	display: inline-block
+
+
+// ########  #######   #######  ######## ######## ########
+// ##       ##     ## ##     ##    ##    ##       ##     ##
+// ##       ##     ## ##     ##    ##    ##       ##     ##
+// ######   ##     ## ##     ##    ##    ######   ########
+// ##       ##     ## ##     ##    ##    ##       ##   ##
+// ##       ##     ## ##     ##    ##    ##       ##    ##
+// ##        #######   #######     ##    ######## ##     ##
+.footer
+	.up_header_container
+		height: 90px
+		padding-top: 30px
+
+
+
 
 //    ###    ##    ## #### ##     ## ########
 //   ## ##   ###   ##  ##  ###   ### ##

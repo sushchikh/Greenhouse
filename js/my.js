@@ -42,6 +42,16 @@ $(window).scroll(function() {
 		});
 	};	
 
+// char element show
+	if (wScroll > ($('.char_trigger').offset().top - ($(window).height()/2))){
+		$('.char_element').each(function(index) {
+			setTimeout(function(){
+				$('.char_element').eq(index).addClass('show');
+			}, 100 * (index + 1))
+		});
+	};		
+
+
 
 
 });//$(window).scroll-function END
