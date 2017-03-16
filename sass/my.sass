@@ -5,8 +5,10 @@
 
 $bgc: #CD7F41
 $text_color_brown: #7D4011
+$text_color_brown_light: #874614
 $text_color_white: #fafafa
 $bgc_light_brown: #FBE6D5
+$yellow: #FBF285
 $btnc: #DC3C18
 $btnch: #CD3817
 
@@ -29,8 +31,23 @@ body
 	transition: all 10s ease
 	z-index: 1000
 
-.fly
-	transform: translate(2000px, 700px)	
+.fly 
+	animation: fly_tomato 28s infinite linear
+
+@keyframes fly_tomato
+	0%
+		transform: translate(-200px,-200px)
+	// 50%	
+	// 	transform: rotateZ(180deg)
+	25%
+		transform: translate(2000px, 700px) rotateZ(180deg)
+
+	50%
+		transform: translate(2000px, -200px)
+
+	75%	
+		transform: translate(-200px, 700px) rotateZ(-180deg)
+
 
 
 // ##     ## ########      ##     ## ########    ###    ########  ######## ########
@@ -114,7 +131,11 @@ body
 	padding-top: 30px
 	text-align: center
 	position: relative
-
+	@media only screen and (max-width: 1600px)
+		height: auto
+		padding-bottom: 30px
+	@media only screen and (max-width: 500px)
+		padding-top: 10px
 
 	//display: none
 	
@@ -122,50 +143,91 @@ body
 .header_container_title
 	text-align: center
 	color: $text_color_brown
-	font-size: 30px
+	font-size: 50px
 	p
 		font-weight: 300
+		margin-top: -5px
 
 .header_img
 	display: inline-block
-	background-image: url(../img/header/header_img.png)
-	background-position: center center
-	background-size: cover
-	background-repeat: no-repeat
-	height: 600px
-	width: 700px
+	height: 800px
+	width: 900px
 	position: absolute
-	left: 300px
-	@media only screen and (max-width: 1000px)
-		width: 100%
+	left: 250px
+	top: 100px
+	@media only screen and (max-width: 1800px)
+		left: 100px
+	@media only screen and (max-width: 1600px)
+		margin: 0 auto
+		left: 200px
+	@media only screen and (max-width: 1300px)
+		left: 50px
+	@media only screen and (max-width: 900px)	
+		width: 110%
+		height: auto
+		position: relative
+		background-size: contain
+		background-position: center center
+		left: -30px
+		top: 0px
+	@media only screen and (max-width: 500px)
+		left: 0px
+
+
+
 
 .header_price_tag
-	font-size: 30px
-	background-color: #FEE517
+	font-size: 45px
+	font-weight: 300
+	background-color: $yellow
 	color: $text_color_brown
 	display: inline-block
 	padding: 5px 10px
 	border-radius: 10px
 	.rouble
 		position: relative
+		font-weight: 300
 		left: -2px
 
 .header_price_tag_position		
 	position: absolute
-	left: 800px 
-	top: 200px
-	@media only screen and (max-width: 1000px)
-		left: 0
+	left: 880px 
+	top: 180px
+	z-index: 1000
+	vertical-align: top
+	@media only screen and (max-width: 1800px)
+		left: 780px
+	@media only screen and (max-width: 1600px)
+		position: relative
+		display: inline-block
+		margin-top: 10px
+		margin: 0px auto	
+		left: 0px
+		top: 0px
+
 
 .header_order_form_container
 	position: absolute
-	width: 300px
-	height: 400px
-	background-color: $text_color_white
-	padding-top: 20px
-	top: 100px
-	left: 1100px
-	box-shadow: 0px 0px 15px gray
+	top: 140px
+	.char_form_container
+		background-color: white
+		&:hover
+			background-color: white
+		@media only screen and (max-width: 500px)	
+			margin-top: 10px
+			width: 95%
+			margin-bottom: 10px
+
+
+.header_order_form_container,
+.countdown_container
+	position: absolute
+	left: 60%
+	@media only screen and (max-width: 1600px)
+		position: relative
+		left: 0px
+		top: 0px
+	
 
 .header_order_form_title
 	color: $text_color_brown
@@ -179,6 +241,110 @@ body
 
 		strong
 			font-weight: 400
+
+
+
+//  ######   #######  ##     ## ##    ## ######## ########   #######  ##      ## ##    ##
+// ##    ## ##     ## ##     ## ###   ##    ##    ##     ## ##     ## ##  ##  ## ###   ##
+// ##       ##     ## ##     ## ####  ##    ##    ##     ## ##     ## ##  ##  ## ####  ##
+// ##       ##     ## ##     ## ## ## ##    ##    ##     ## ##     ## ##  ##  ## ## ## ##
+// ##       ##     ## ##     ## ##  ####    ##    ##     ## ##     ## ##  ##  ## ##  ####
+// ##    ## ##     ## ##     ## ##   ###    ##    ##     ## ##     ## ##  ##  ## ##   ###
+//  ######   #######   #######  ##    ##    ##    ########   #######   ###  ###  ##    ##
+
+/* Contdonwn */
+
+.countdown_container
+	top: 480px
+	@media only screen and (max-width: 1600px)
+		top: 0px
+
+.countdown_title
+	color: $text_color_brown
+	font-size: 30px
+	position: relative
+	left: -50px
+	top: 15px
+	background-color: rgba(white, .8)
+	display: inline-block
+	padding: 5px 20px
+	border-radius: 10px
+	@media only screen and (max-width: 1600px)
+		left: 0px
+	@media only screen and (max-width: 500px)
+		font-size: 20px
+
+.timer
+	margin: 0 auto
+	text-align: center
+	width: 500px
+	height: 120px
+	position: relative
+	left: -50px
+	@media only screen and (max-width: 1600px)
+		left: 0px
+		width: 100%
+	
+
+#CDT 
+	font-size: 60px
+	color: #eee
+	margin: 30px 0 0px
+	font-weight: bold
+	@media only screen and (max-width: 900px)
+		width: 100%
+	@media only screen and (max-width: 500px)
+		margin-top: 10px
+
+
+#CDT .number-wrapper 
+	margin: 10px
+	position: relative
+	@media only screen and (max-width: 1100px)
+		width: 100%
+
+
+#CDT .number 
+	display: inline-block
+	background: white
+	padding: 0 12px
+	height: 80px
+	color: $text_color_brown
+	line-height: 80px
+	border-radius: 50%
+	text-align: center
+	width: 100px
+	height: 100px
+	font-size: 45px
+	border: 2px solid $text_color_brown
+	@media only screen and (max-width: 500px)
+		font-size: 20px
+		height: 50px
+		width: 50px
+		line-height: 50px
+
+
+		
+#CDT .line 
+	display: none
+
+		
+.caption 
+	font-size: 17px
+	font-weight: 300
+	position: absolute
+	top: 65px
+	left: 0
+	text-align: center
+	width: 100%
+	color: $text_color_brown
+	@media only screen and (max-width: 500px)
+		top: 75px
+		font-size: 13px
+
+
+
+
 
 
 // ######## ########    ###    ######## ##     ## ########  ########  ######
@@ -259,12 +425,15 @@ body
 	height: 150px
 	background-color: $text_color_brown
 	text-align: center
+	transition: all .3s ease
+	&:hover
+		background-color: $text_color_brown_light
 
 	img
 		display: inline-block
 		vertical-align: middle
 		transition: transform .5s ease
-		margin-top: 10px
+		margin-top: 27px
 
 
 .rotate
@@ -470,12 +639,14 @@ iframe
 
 .char_container
 	text-align: center
-	background-image: url("../img/char/background.jpg")
+	background-image: url("../img/char/background2.jpg")
 	background-repeat: no-repeat
 	background-position: center top
 	background-size: cover
 	padding-top: 30px
+	padding-bottom: 30px
 	position: relative
+	margin-top: 30px
 
 .char_trigger
 	width: 0px
@@ -495,21 +666,86 @@ iframe
 	width: 200px
 	height: 300px
 	color: white
-	margin: 20px 10px 
+	margin: 30px 10px 
+	vertical-align: top
+	padding-top: 20px
 	box-shadow: 0px 0px 35px rgba($text_color_brown, .6)
 	opacity: 0
 	transform: translate(0px, 200px) scale(.3)
 	transition: all .8s cubic-bezier(0.350, 0.375, 0.135, 1.145)
 	&:hover
 		transform: scale(1.05)
+		background-color: $text_color_brown_light
 	@media only screen and (max-width: 450px)
 		transform: translate(200px, 0px) scale(.5)
 
+.char_element_text
+	margin-top: 25px
 
+.char_element_title
+	font-size: 40px
+	font-weight: 500
+	margin-top: 20px
 
 .char_element_title_small
+	margin-top: 20px
 	display: inline-block
+	font-size: 20px
+	font-weight: 300
+	upper
+		font-size: 14px
+		position: relative
+		top: -10px
 
+
+// form ``````````````````````````````````````````````````````````````````````````````````````````````````````
+
+.char_form_container
+	background-color: rgba(white, .7)
+	padding-top: 30px
+	margin: 40px auto 20px
+	border-radius: 10px
+	height: auto
+	padding-bottom: 40px
+	width: 400px
+	transition: background-color .3s ease
+	@media only screen and (max-width: 410px)
+		width: 97%
+		margin: 40px 5px 20px 5px
+	&:hover
+		background-color: rgba(white, .9)
+		.footer_form_btn
+			transform: scale(1.05)	
+	.header_price_tag
+		margin-bottom: 10px
+		background-color: #FBF285
+	
+.char_form_title
+	font-size: 30px
+	color: $text_color_brown
+.char_form_subtitle
+	color: $text_color_brown
+	font-size: 20px
+	margin-bottom: 10px
+
+.footer_input
+	width: 250px	
+	border-radius: 10px	
+	padding: 5px 10px
+	margin-top: 10px
+	font-size: 20px
+	border: 1px solid $text_color_brown
+	@media only screen and (max-width: 300px)
+		width: 90%
+
+.footer_form_btn
+	margin-top: 30px
+	font-size: 20px
+	border-radius: 10px
+	padding: 5px 10px
+	background-color: #CD1414
+	color: white
+	border: 1px solid #EF3D3D
 
 // ########  #######   #######  ######## ######## ########
 // ##       ##     ## ##     ##    ##    ##       ##     ##
@@ -522,7 +758,110 @@ iframe
 	.up_header_container
 		height: 90px
 		padding-top: 30px
+		@media only screen and (max-width: 500px)
+			padding-top: 15px
+			
 
+
+// ########  #######  ########  ##     ##     ##     ## #### ########
+// ##       ##     ## ##     ## ###   ###     ##     ##  ##  ##     ##
+// ##       ##     ## ##     ## #### ####     ##     ##  ##  ##     ##
+// ######   ##     ## ########  ## ### ##     #########  ##  ##     ##
+// ##       ##     ## ##   ##   ##     ##     ##     ##  ##  ##     ##
+// ##       ##     ## ##    ##  ##     ## ### ##     ##  ##  ##     ##
+// ##        #######  ##     ## ##     ## ### ##     ## #### ########
+
+.form_hidden_wrapper
+	z-index: 9999
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100vh
+	background-color: rgba(white, .9)
+	display: none
+
+.form_hidden
+	background-color: rgba(white, .7)
+	border-radius: 10px
+	height: auto
+	padding-bottom: 40px
+	width: 400px
+	margin: auto
+	text-align: center
+	transition: background-color .3s ease
+	position: relative
+	@media only screen and (max-width: 410px)
+		width: 97%
+	&:hover
+		background-color: rgba(white, .9)
+		.footer_form_btn
+			transform: scale(1.05)	
+	.header_price_tag
+		margin-bottom: 10px
+		background-color: #FBF285
+
+.close
+	color: #666
+	border: 1px solid lightgray
+	padding: 5px 10px
+	display: inline-block
+	position: absolute
+	border-radius: 10px
+	top: 280px
+	left: 4px
+	&:active
+		top: 282px
+
+
+
+
+//  ######  ##     ##  ######   ######   ######
+// ##    ## ##     ## ##    ## ##    ## ##    ##
+// ##       ##     ## ##       ##       ##
+//  ######  ##     ## ##       ##        ######
+//       ## ##     ## ##       ##             ##
+// ##    ## ##     ## ##    ## ##    ## ##    ##
+//  ######   #######   ######   ######   ######
+
+.succsess_wrapper
+	display: none
+	position: fixed
+	width: 100%
+	height: 100vh
+	background-color: rgba(white, .7)
+	top: 0
+	left: 0
+	z-index: 8999
+
+.succses_container
+	margin: 100px auto
+	height: 330px
+	position: relative
+	width: 300px
+	background-color: white
+	border-radius: 10px
+	border: 1px solid $text_color_brown
+	text-align: center
+	z-index: 8888
+	@media only screen and (max-width: 310px)
+		width: 90%
+	.close
+		left: calc(50% - 45px)
+.succsess_title,
+.succsess_text,
+.succsess_ico
+	display: inline-block
+	color: $text_color_brown
+
+
+.succsess_title
+	font-size: 30px
+	margin-top: 10px
+.succsess_text
+	font-size: 20px	
+.succsess_ico
+	margin: 30px auto
 
 
 
@@ -538,3 +877,9 @@ iframe
 	transform: translate(0px, 0px)
 	transform: scale(1)
 	opacity: 1
+
+.show_form
+	display: block
+
+.succses_show
+	display: block

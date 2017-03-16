@@ -24,7 +24,7 @@
 <div class="up_header_container">
   <div class="up_header_logo"></div>
   <div class="up_header_phone">8-963-553-78-13</div>
-  <div class="up_header_btn push">Заказать звонок</div>
+  <div class="up_header_btn push show_btn">Заказать звонок</div>
 </div><!-- p_header_container end -->
 
 
@@ -39,26 +39,43 @@
  -->
 
 <div class="header_container">
-<div class="tomato_container"><img src="img/tomato/1.png" alt=""></div>
 
   <div class="header_container_title">
-    <p>Разборная теплица</p>
-    <p>«Целина»</p>
+    <p>Теплица «Целина»</p>
   </div>
-  <div class="header_img"></div> 
+  
   <div class="header_price_tag header_price_tag_position">
     10 000 <span class="rouble">&#8381;</span>
   </div>
+    <div class="header_img"><img src="img/header/header_img2.png" alt="" width="82%"></div> 
   <div class="header_order_form_container">
-    <div class="header_order_form_title">
-      <p>закажи <strong>сейчас</strong></p>
-      <p><small>по супер цене</small></p>
+    <div class="char_form_container">
+    <div class="char_form_title">Заказать сейчас</div>
+    <div class="char_form_subtitle">по супер цене</div>
+    
+    <div class="form_wrapper">
+      <form id="form_top">
+        <!-- <input type="text" class="hidden" name="spam" /> --><!-- скрытое поле — защита от спама, чтоб заработало раскоменти -->
+        <input class="footer_input" type="text" name="name" placeholder="Ваше имя" required /><br />
+        <input class="footer_input" type="text" name="phone" placeholder="Ваш телефон" required /><br />
+        <!-- если хочеться, можно еще и почту взять — раскоментишь -->
+        <!-- <input type="text" name="email" placeholder="Ваш e-mail" /><span class="gray">— указывать не обязательно</span><br/>  -->
+        <button class="footer_form_btn push">Отправить заявку</button>
+      </form>
     </div>
-    <input type="text">
-    <input type="text">
-    <button>заказать</button>
   </div>
-</div> <!-- header_container end -->
+  </div>
+
+  <div class="countdown_container">
+    <div class="countdown_title">
+      цена будет действительна:
+    </div>
+    <div class="timer">
+        <div id="CDT"></div>
+    </div>
+  </div>
+
+  </div> <!-- header_container end -->
 
 
 <!-- 
@@ -80,12 +97,12 @@
   </div>
   <br>
   <div class="features_element">
-    <div class="features_element_img"><img src="img/features/crab.png" alt="" width="80%"></div>
+    <div class="features_element_img"><img src="img/features/crab.png" alt="" width="80%" style="margin-top: 22px"></div>
     <div class="features_element_title">Прочный каркас</div>
     <div class="features_element_text">краб-система обеспечивает повышенную жесткость каркаса</div>
   </div>
   <div class="features_element">
-    <div class="features_element_img"><img src="img/features/window.png" alt="" width="70%" style="margin-top: 24px"></div>
+    <div class="features_element_img"><img src="img/features/window.png" alt="" width="70%" style="margin-top: 27px"></div>
     <div class="features_element_title">Комплектация</div>
    <div class="features_element_text">возможна установка дополнительных форточек, усилителей, систем капельного полива</div>
   </div>
@@ -100,7 +117,7 @@
     <div class="features_element_text">в разобранном виде помещается в багажник</div>
   </div>
   <div class="features_element">
-    <div class="features_element_img"><img src="img/features/drill.png" alt="" width="70%" style="margin-top: 24px"></div>
+    <div class="features_element_img"><img src="img/features/drill.png" alt="" width="70%" style="margin-top: 30px"></div>
     <div class="features_element_title">Простая сборка</div>
     <div class="features_element_text">сборка не требует сверления и подгонки деталей</div>
   </div>
@@ -120,7 +137,7 @@
   <div class="callback_text">
     Бесплатная консультация специалиста по телефону <nobr>8-963-553-78-13</nobr>
   </div>
-  <div class="callback_btn push">
+  <div class="callback_btn push show_btn">
     заказать обратный звонок
   </div>
 </div><!-- callback_container end -->
@@ -144,7 +161,7 @@
         10 000 <span class="rouble">&#8381;</span>
     </div>
     <div class="razbor_img"><img src="img/razbor/razbor.jpg" alt=""></div>
-    <div class="callback_btn push">
+    <div class="callback_btn push show_btn">
       заказать
     </div>
 
@@ -199,6 +216,10 @@
  -->
 
 <div class="complect_container">
+
+<div class="tomato_container"><img src="img/tomato/1.png" alt=""></div>
+
+
   <div class="complect_trigger"></div>
 
   <div class="features_container_title">
@@ -255,8 +276,8 @@
   </div>
   <div class="char_element">
     <div class="char_element_img"><img src="img/char/4.png" alt=""></div>
-    <div class="char_element_text">расстояние между дугами</div>
-    <div class="char_element_title">0,67 
+    <div class="char_element_text">расстояние<br> между дугами</div>
+    <div class="char_element_title" style="margin-top: 0px">0,67 
       <div class="char_element_title_small">м</div>
     </div>
   </div>
@@ -264,18 +285,30 @@
     <div class="char_element_img"><img src="img/char/5.png" alt=""></div>
     <div class="char_element_text">снеговая нагрузка</div>
     <div class="char_element_title">150
-      <div class="char_element_title_small">кг/м2</div>
+      <div class="char_element_title_small">кг/м<upper>2</upper></div>
     </div>
   </div>
+
+
+
+<!---form ```````````````````````````````````````````````````````-->
 
   <div class="char_form_container">
     <div class="char_form_title">Заказать сейчас</div>
     <div class="char_form_subtitle">по супер цене</div>
-    <form>
-      <input type="text">
-      <input type="text">
-      <button>заказать</button>
-    </form>
+    <div class="header_price_tag">
+        10 000 <span class="rouble">&#8381;</span>
+    </div>
+    <div class="form_wrapper">
+      <form id="form">
+        <!-- <input type="text" class="hidden" name="spam" /> --><!-- скрытое поле — защита от спама, чтоб заработало раскоменти -->
+        <input class="footer_input" type="text" name="name" placeholder="Ваше имя" required /><br />
+        <input class="footer_input" type="text" name="phone" placeholder="Ваш телефон" required /><br />
+        <!-- если хочеться, можно еще и почту взять — раскоментишь -->
+        <!-- <input type="text" name="email" placeholder="Ваш e-mail" /><span class="gray">— указывать не обязательно</span><br/>  -->
+        <button class="footer_form_btn push">Отправить заявку</button>
+      </form>
+    </div>
   </div> <!-- char_form_container end -->
 
 
@@ -294,10 +327,61 @@
 <div class="footer">
   <div class="up_header_container">
   <div class="up_header_phone">8-963-553-78-13</div>
-  <div class="up_header_btn push">Заказать звонок</div>
+  <div class="up_header_btn push show_btn">Заказать звонок</div>
 </div><!-- p_header_container end -->
 </div><!-- footer end -->
- 
+
+
+<!-- 
+######## ########  ##     ##     ##     ## #### ########
+##       ##     ## ###   ###     ##     ##  ##  ##     ##
+##       ##     ## #### ####     ##     ##  ##  ##     ##
+######   ########  ## ### ##     #########  ##  ##     ##
+##       ##   ##   ##     ##     ##     ##  ##  ##     ##
+##       ##    ##  ##     ## ### ##     ##  ##  ##     ##
+##       ##     ## ##     ## ### ##     ## #### ########
+ -->
+
+<div class="form_hidden_wrapper">
+  <div class="form_hidden">
+    <div class="char_form_container">
+      <div class="char_form_title"></div>
+      <div class="char_form_subtitle">заполните форму</div>
+      <div class="form_wrapper">
+        <form id="form_hidden">
+          <!-- <input type="text" class="hidden" name="spam" /> --><!-- скрытое поле — защита от спама, чтоб заработало раскоменти -->
+          <input class="footer_input" type="text" name="name" placeholder="Ваше имя" required /><br />
+          <input class="footer_input" type="text" name="phone" placeholder="Ваш телефон" required /><br />
+          <!-- если хочеться, можно еще и почту взять — раскоментишь -->
+          <!-- <input type="text" name="email" placeholder="Ваш e-mail" /><span class="gray">— указывать не обязательно</span><br/>  -->
+          <button class="footer_form_btn push">Отправить</button>
+          <div class="close push">закрыть</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!-- 
+ ######  ##     ##  ######   ######   ######
+##    ## ##     ## ##    ## ##    ## ##    ##
+##       ##     ## ##       ##       ##
+ ######  ##     ## ##       ##        ######
+      ## ##     ## ##       ##             ##
+##    ## ##     ## ##    ## ##    ## ##    ##
+ ######   #######   ######   ######   ######
+ -->
+<div class="succsess_wrapper">
+  <div class="succses_container"> 
+    <div class="succsess_title">Ваша заявка принята.</div>
+    
+    <div class="succsess_ico"><img src="img/success.png" alt=""></div>
+    <div class="succsess_text">Мы скоро с вами свяжемся</div>
+    <div class="close push">закрыть</div>
+  </div>
+</div>
+
     <script src="js/jquery.js"></script>
     <script src="js/my.js"></script>
   </body>
