@@ -52,6 +52,17 @@ $(window).scroll(function() {
 		});
 	};		
 
+// cucumber element show
+  if (wScroll > ($('.cucumber_trigger').offset().top - ($(window).height()/2))){
+    $('.cucumber').each(function(index) {
+      setTimeout(function(){
+        $('.cucumber').eq(index).addClass('show');
+      }, 5000 * (index + 1))
+    });
+  };    
+
+
+
 
 
 
@@ -138,6 +149,16 @@ $('.close').click(function(event) {
 	$('.succsess_wrapper').removeClass('succses_show');
 });
 
+
+$('.tomato_container').click(function(event) {
+  $('.tomato_container').hide('fast', function() {
+    $('.bloody').addClass('bloody_show');
+    setTimeout(bloodyHide, 3000);
+    function bloodyHide(){
+      $('.bloody').addClass('bloody_sweep');
+    };
+  });
+});
 
 
 }); //$(document).ready-func END
