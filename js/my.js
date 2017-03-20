@@ -1,3 +1,5 @@
+/* привет тебе незнакомец, сочувствую, ибо сайт делал на скорую руку, и поверишь ли — бесплатно!*/
+// прости...
 $(document).ready(function() {
 	
 
@@ -134,13 +136,16 @@ function succsess(){
 };
 
 
+
+// ########  #######  ##     ##    ###    ########  #######
+//    ##    ##     ## ###   ###   ## ##      ##    ##     ##
+//    ##    ##     ## #### ####  ##   ##     ##    ##     ##
+//    ##    ##     ## ## ### ## ##     ##    ##    ##     ##
+//    ##    ##     ## ##     ## #########    ##    ##     ##
+//    ##    ##     ## ##     ## ##     ##    ##    ##     ##
+//    ##     #######  ##     ## ##     ##    ##     #######
+
 // летающая помидорка
-
-
-
-
-
-
 $('.show_btn').click(function(event) {
 	$('.form_hidden_wrapper').addClass('show_form');
 });
@@ -149,13 +154,18 @@ $('.close').click(function(event) {
 	$('.succsess_wrapper').removeClass('succses_show');
 });
 
-
+/*ахахахах, вот такое все костылявое, добавляется второй класс с дисплей-ноне, чтобы кровяка не перехватывала фокус на экране, еще раз ахахахаха*/
+// большой привет тому, кто это будет поддерживать в дальшейшем
 $('.tomato_container').click(function(event) {
   $('.tomato_container').hide('fast', function() {
     $('.bloody').addClass('bloody_show');
     setTimeout(bloodyHide, 3000);
+    setTimeout(bloodyHide2, 5000); 
     function bloodyHide(){
       $('.bloody').addClass('bloody_sweep');
+    };
+    function bloodyHide2(){
+      $('.bloody').addClass('bloody_sweep2');
     };
   });
 });
